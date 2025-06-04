@@ -1,41 +1,45 @@
-# 🔁 Device + User Onboarding Flow
+# 📲 Onboard Flow – Device & User Onboarding
 
-## 🧩 Use Cases – Device + User Onboarding
-
-These are real-world scenarios that trigger this onboarding flow:
-
-1. **New Employee Onboarding**  
-   An enterprise admin registers a new employee and their device so they can access telecom apps securely.
-
-2. **Device Replacement**  
-   A field worker's phone is replaced, and the new device must be verified and associated with their profile.
-
-3. **Role Reassignment**  
-   An existing user’s access level is updated, requiring re-onboarding with new policies.
-
-4. **Bulk Enterprise Import**  
-   Admin uploads a CSV list of pre-approved users and pre-registered devices to fast-track onboarding.
+This document describes the onboarding flow for users and their associated devices in the Telecom Mission Control platform. It ensures all enterprise devices and users are securely registered and validated before policy enforcement.
 
 ---
 
-## 📌 Flow Summary
+## 📊 Overview
 
-1. **Admin Portal** – Enterprise admin initiates user + device onboarding.
-2. **Frontend UI** – User/device data collected via React/React Native.
-3. **API Gateway** – Validates and routes request to backend services.
-4. **Device Registration Service** – Handles logic for tower mapping and device validation.
-5. **Tower Registry** – Responds with valid tower-carrier-device combinations.
-6. **User Identity Service** – Creates or verifies user identity and associates the device.
-7. **Frontend Cache** – Confirmation + token saved locally (IndexedDB/AsyncStorage) for offline use.
+The **Onboard Flow** enables seamless registration of users and their devices by integrating with tower registries, identity providers, and device inventory systems. It supports both manual and auto-discovery of devices.
 
 ---
 
-## 🔐 Notes
+## 🔁 Flow Diagram
 
-- All interactions use secure HTTPS with JWT-based authentication.
-- Offline-first design ensures device onboarding can resume after reconnection.
-- Frontend uses retry queues for reliable delivery.
+![Onboard Flow](./onboard-flow.png)
 
 ---
 
-🖼️ [View Diagram](./device-user-onboarding.png)
+## 🔧 Flow Steps
+
+1. **Enterprise Admin or Auto-Discovery Service** detects a new user or device.
+2. The **Frontend App** triggers a request to initiate onboarding.
+3. The **SecureEdge Gateway** orchestrates requests to:
+   - **Tower Registry Service** to validate device-carrier compatibility.
+   - **Identity Provider (IdP)** to validate the user’s credentials and enterprise affiliation.
+4. Upon successful validation:
+   - The **User Registry** stores user metadata and links them to the validated device.
+   - The **Device Service** records device information and binds it to the user.
+5. The onboarding status is cached locally on the frontend for offline support.
+
+---
+
+## 🔄 Bi-Directional Flows
+
+- **Frontend ↔ SecureEdge Gateway**: Status updates and validations.
+- **SecureEdge Gateway ↔ Tower Registry**: Validation of supported carriers per tower.
+- **SecureEdge Gateway ↔ Identity Provider**: Authentication & enterprise verification.
+
+---
+
+## 💼 Use Case: New Device Registration for Remote Employee
+
+> A new field engineer joins the enterprise and turns on their company-issued phone for the first time in a remote region.
+
+- The device is auto-discovered by the platform through cell towe

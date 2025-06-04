@@ -1,54 +1,74 @@
-# 🔐 Policy Enforcement Flow
+# 🔐 Policy Reactor – Enforcement Flow
 
-## 🧩 Use Cases – Policy Enforcement
-
-These real-world scenarios trigger policy checks and enforcement:
-
-1. **Blocked Feature Use**  
-   A technician tries to use a camera or file upload feature not allowed for their role.
-
-2. **Tower-Based Restriction**  
-   A user connects to a tower that only supports certain apps or OS types — triggering restricted access.
-
-3. **Security Violation Response**  
-   An action violates enterprise policy, triggering auto-remediation like disabling connectivity at the tower level.
+This document outlines the flow of enforcing enterprise security policies in real-time through the **Policy Reactor** component of the Telecom Mission Control frontend system.
 
 ---
 
-## 📌 Flow Summary
+## 📊 Overview
 
-1. **User Action Captured**  
-   A user performs an app action (e.g., upload, share location).
+The **Policy Reactor** acts as the decision-making engine that evaluates whether specific user actions should be **allowed**, **denied**, or **remediated** based on enterprise rules.
 
-2. **API Gateway**  
-   The frontend sends metadata to the API Gateway, including action type, app, and device ID.
-
-3. **User Profile Service**  
-   Gateway queries the User Profile Service to fetch the user’s role, device type, and tower info.
-
-4. **Policy Engine**  
-   Action + metadata sent to Policy Engine for rule evaluation.
-
-5. **Policy DB**  
-   The engine checks enterprise policies for the current role + app + action + location context.
-
-6. **Enforcement Result**  
-   Response is one of: `ALLOW`, `DENY`, or `REMEDIATE`.
-
-7. **Cell Tower (if premium)**  
-   If `REMEDIATE`, tower enforces rule directly on the network layer.
-
-8. **Security Dashboard**  
-   All actions (allowed or blocked) are logged for real-time visibility.
+It is invoked during runtime when a user interacts with an app via the frontend client and is subject to enforcement based on role, device, app, location, and policy.
 
 ---
 
-## 🔐 Notes
+## 🔁 Flow Diagram
 
-- All communication is secured via JWT-authenticated HTTPS.
-- The Policy Engine supports live evaluation and caching for performance.
-- Tower-level enforcement is available only on premium subscription plans.
+![Policy Flow](./policy-reactor.png)
 
 ---
 
-🖼️ [View Diagram](./policy-enforcement-flow.png)
+## 🔧 Flow Steps
+
+1. **Frontend App** initiates an action (e.g., upload file, access feature).
+2. The **SecureEdge Gateway** forwards the request to the **Policy Reactor** and context services.
+3. The **RoleContext API** supplies relevant identity and permission info.
+4. The **Policy Reactor**:
+   - Evaluates the policy for the user, role, app, and device context.
+   - Fetches rules from the **PolicyRuleset Store**.
+5. Based on rule evaluation:
+   - ✅ Allows action
+   - ❌ Denies action
+   - 🔄 Triggers a remediation plan (e.g., disable feature, alert admin)
+6. The **Cell Tower Enforcement** module is invoked if action must be blocked at the network level.
+7. The **Sentinel Dashboard** logs the activity, outcome, and any audit details.
+
+---
+
+## 🔄 Bi-Directional Flows
+
+- **Frontend ↔ Gateway**: Request/response for user interactions.
+- **Gateway ↔ Policy Reactor**: Decision queries and outcomes.
+- **Gateway ↔ RoleContext API**: Identity and role validation.
+
+---
+
+## 💼 Use Case: Role-Based Action Blocking
+
+> A contractor using an Android device tries to install a network tool from the enterprise app store.
+
+- The Policy Reactor identifies that the user's role doesn’t permit installation of restricted apps.
+- It denies the request and logs the attempt in the dashboard.
+- The cell tower is notified to prevent this device from future downloads of this type.
+
+---
+
+## 🧩 Components Involved
+
+| Component              | Role                                       |
+| ---------------------- | ------------------------------------------ |
+| Frontend App           | UI for user actions                        |
+| SecureEdge Gateway     | Secure API communication & orchestration   |
+| RoleContext API        | Provides identity, device, and role info   |
+| **Policy Reactor**     | Core engine to evaluate and enforce policy |
+| PolicyRuleset Store    | Stores enterprise policy definitions       |
+| Cell Tower Enforcement | Executes physical-level enforcement        |
+| Sentinel Dashboard     | Logs policy decisions & violations         |
+
+---
+
+## 🌐 Accessibility & Scale
+
+- Real-time policy enforcement even during degraded network
+- Supports large-scale user bases with modular, distributed enforcement
+- Designed with accessibility (WCAG) and offline-first principles
