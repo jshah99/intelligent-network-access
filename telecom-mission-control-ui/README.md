@@ -19,5 +19,6 @@ This frontend system enables enterprises to securely manage connected carrier de
 - **API Gateway**: REST/GraphQL via API Orchestration Layer
 - **Architecture**: Scalable, modular, and designed for real-time + offline conditions
 
-📊 Explore detailed diagrams in [architecture-overview.md](./architecture/architecture-overview.md)
+## 📐 Architecture
 
+Explore the system design and key data flows in [`architecture-overview.md`](./architecture/architecture-overview.md).

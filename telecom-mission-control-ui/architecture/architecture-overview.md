@@ -60,4 +60,6 @@ This diagram presents the high-level architecture for the frontend system of the
 
 This diagram represents the flow of onboarding a new user and device, including tower compatibility, identity registration, and frontend caching.
 
-![Device Onboarding Flow](./data-flows/device-user-onboarding.png)
+📄 [Full Description](./data-flows/device-user-onboarding/device-user-onboarding.md)
+
+![Device Onboarding Flow](./data-flows/device-user-onboarding/device-user-onboarding.png)
