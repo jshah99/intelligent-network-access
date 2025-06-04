@@ -1,35 +1,20 @@
-# Telecom Mission Control UI
+🛰️ Telecom Mission Control – Frontend System Overview
+This frontend system enables enterprises to securely manage connected carrier devices using a highly accessible and scalable web/mobile interface.
 
-This project is a high-assurance, accessibility-compliant, and scalable frontend architecture for a global Telecom Mission Control SaaS platform. It enables enterprises to manage network policies, carrier-device compatibility, app-level user actions, and real-time edge security enforcement across diverse geographies, carriers, and form factors.
+## 🔧 Key Features
 
-## 🌍 Key Features
-
-- Role-based policy enforcement for apps and actions
-- Carrier, device, and OS compatibility matrix via cell towers
-- Real-time security health dashboard
-- Offline-first support for mission-critical usage
-- Auto-remediation triggers at edge towers (premium feature)
-- Integration with third-party telecom real estate data sources
-- Accessible (a11y), responsive UI for web and mobile
-
-## 🚀 Tech Stack
-
-- **React** with PWA support
-- **Redux Toolkit / Zustand** for state management
-- **React Router** for route handling
-- **Service Workers & IndexedDB** for offline sync
-- **TailwindCSS** for scalable styling
-- **i18Next** for localization
-- **RESTful or GraphQL APIs**
-
-## 📁 Folder Structure
-
-- `architecture/` – High-level diagrams (PNG, draw.io)
-- `api/` – OpenAPI spec or GraphQL schema definitions
-- `models/` – Data models and ERDs
-- `src/` – Frontend code (React)
-- `docs/` – Additional documentation or setup notes
+- **Device & User Onboarding**: Seamless registration of users and devices from enterprise systems
+- **Policy Enforcement at Cell Towers**: Enforce role-based access controls and app-level restrictions through carrier-tower-device coordination
+- **Real-Time Security Dashboard**: Visualize system health, violations, and policy status
+- **Offline-First Usage**: Ensures full or partial app usage in disconnected states via IndexedDB (Web) or AsyncStorage (Mobile)
+- **Accessibility (A11y) Compliance**: WCAG-compliant UI with semantic HTML, keyboard navigation, and screen reader support
 
 ---
 
-Want help generating this repo structure or README file to upload? Let me know and I can generate the files for you.
+## 🌍 Tech Stack
+
+- **Frontend**: React (Web), React Native (Mobile)
+- **State Management**: Redux Toolkit or MobX
+- **Offline Storage**: IndexedDB (Web), AsyncStorage (Mobile)
+- **API Gateway**: REST/GraphQL via API Orchestration Layer
+- **Architecture**: Scalable, modular, and designed for real-time + offline conditions
