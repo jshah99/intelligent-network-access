@@ -1,6 +1,6 @@
 # 🔐 Policy Enforcement Flow
 
-## 🧩 Use Cases – Policy Enforcement
+## 🧩 Use Cases – Policy Reactor
 
 These real-world scenarios trigger policy checks and enforcement:
 
