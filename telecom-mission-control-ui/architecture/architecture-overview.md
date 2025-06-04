@@ -56,10 +56,8 @@ This diagram presents the high-level architecture for the frontend system of the
 - The architecture is modular, layered, and designed for multi-region deployments.
 - Supports future additions like new device types, role policies, and app-level control modules.
 
-## 🔁 Data Flow: Device + User Onboarding
+![Onboarding Flow](./data-flows/onboard-flow/onboard-flow.png)  
+📄 [Read More](./data-flows/onboard-flow/onboard-flow.md)
 
-This diagram represents the flow of onboarding a new user and device, including tower compatibility, identity registration, and frontend caching.
-
-📄 [Full Description](./data-flows/device-user-onboarding/device-user-onboarding.md)
-
-![Device Onboarding Flow](./data-flows/device-user-onboarding/device-user-onboarding.png)
+![Policy Enforcement Flow](./data-flows/policy-reactor/policy-reactor.png)  
+📄 [Read More](./data-flows/policy-reactor/policy-reactor.md)
