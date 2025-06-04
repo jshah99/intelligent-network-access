@@ -1,6 +1,22 @@
 # 🔁 Device + User Onboarding Flow
 
-This diagram illustrates the step-by-step process of onboarding a new user and their device into the Telecom Mission Control system.
+## 🧩 Use Cases – Device + User Onboarding
+
+These are real-world scenarios that trigger this onboarding flow:
+
+1. **New Employee Onboarding**  
+   An enterprise admin registers a new employee and their device so they can access telecom apps securely.
+
+2. **Device Replacement**  
+   A field worker's phone is replaced, and the new device must be verified and associated with their profile.
+
+3. **Role Reassignment**  
+   An existing user’s access level is updated, requiring re-onboarding with new policies.
+
+4. **Bulk Enterprise Import**  
+   Admin uploads a CSV list of pre-approved users and pre-registered devices to fast-track onboarding.
+
+---
 
 ## 📌 Flow Summary
 
@@ -11,6 +27,8 @@ This diagram illustrates the step-by-step process of onboarding a new user and t
 5. **Tower Registry** – Responds with valid tower-carrier-device combinations.
 6. **User Identity Service** – Creates or verifies user identity and associates the device.
 7. **Frontend Cache** – Confirmation + token saved locally (IndexedDB/AsyncStorage) for offline use.
+
+---
 
 ## 🔐 Notes
 
