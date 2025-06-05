@@ -6,7 +6,7 @@ This document outlines the flow of enforcing enterprise security policies in rea
 
 ## 📊 Overview
 
-The **Policy Reactor** acts as the decision-making engine that evaluates whether specific user actions should be **allowed**, **denied**, or **remediated** based on enterprise rules.
+## 🧩 Use Cases – Policy Reactor
 
 It is invoked during runtime when a user interacts with an app via the frontend client and is subject to enforcement based on role, device, app, location, and policy.
 
