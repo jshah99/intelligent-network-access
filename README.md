@@ -13,7 +13,9 @@ Intelligent-Network-Access/
 ├── telecom-ui/                  ← React-based frontend UI (Vite + TypeScript)
 │   ├── src/
 │   │   ├── assets/              ← UI screenshots
-│   │   └── ...
+│   │   └── components/          ← components
+        ├── App.tsx              ← Root level app file
+│   │   └── pages/               ← pages ( dahboard etc )
 │   └── README.md                ← UI-specific setup & explanation
 │
 ├── telecom-architecture/        ← Architecture, diagrams, API contracts
