@@ -8,7 +8,22 @@ It includes complete architecture planning, data models, API specifications, and
 
 ## 📁 Project Structure
 
-<pre> Intelligent-Network-Access/ ├── telecom-ui/ ← React-based frontend UI (Vite + TypeScript) │ ├── src/ │ │ ├── assets/ ← UI screenshots │ │ └── ... │ └── README.md ← UI-specific setup & explanation │ ├── telecom-architecture/ ← Architecture, diagrams, API contracts │ ├── architecture/ ← High-level architecture overview + flow docs │ ├── models/ ← Entity Relationship Diagrams, flowcharts │ ├── api-contracts/ ← Detailed API contracts (OpenAPI-style) │ └── README.md ← System architecture documentation │ └── README.md ← Top-level overview (this file) </pre>
+```
+Intelligent-Network-Access/
+├── telecom-ui/                  ← React-based frontend UI (Vite + TypeScript)
+│   ├── src/
+│   │   ├── assets/              ← UI screenshots
+│   │   └── ...
+│   └── README.md                ← UI-specific setup & explanation
+│
+├── telecom-architecture/        ← Architecture, diagrams, API contracts
+│   ├── architecture/            ← High-level architecture overview + flow docs
+│   ├── models/                  ← Entity Relationship Diagrams, flowcharts
+│   ├── api-contracts/           ← Detailed API contracts (OpenAPI-style)
+│   └── README.md                ← System architecture documentation
+│
+└── README.md                    ← Top-level overview (this file)
+```
 
 ## 🧩 What's Included
 
