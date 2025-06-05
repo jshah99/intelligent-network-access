@@ -1,54 +1,87 @@
-# React + TypeScript + Vite
+# 🛰️ Telecom Mission Control – Frontend System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-assurance, accessible, and scalable frontend platform for enterprise-level telecom management.  
+This system enables **device + user onboarding**, **policy enforcement**, and **real-time dashboards**, used across **web and mobile**, with full offline mode support.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 What’s Implemented
 
-## Expanding the ESLint configuration
+This repository covers **architecture design**, **UI development**, **data models**, and **API contracts** for a Telecom SaaS platform.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ✅ Code Features (Frontend)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **🔐 Device + User Onboarding**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  - Validated form with dynamic fields
+  - Disabled submit button until valid
+  - Popup on success
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **📊 Dashboard**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+  - Displays stats like total onboarded devices
+  - Navigation with React Router
+  - Modular UI components
+
+- **⚙️ Policy Enforcement (Policy Reactor)**
+
+  - Enforces action-level rules based on user role and app context
+  - Defined in flow model and ER diagram
+  - Mock logic in code (admin/role logic)
+
+- **🏗️ Tower Registry Service**
+  - Registers telecom towers and supported carriers
+  - Used to determine compatibility during onboarding
+  - Data flow and contract modeled
+
+---
+
+## 🖼️ UI Screenshots
+
+### 🎯 Device + User Onboarding
+
+![Onboarding Form](./assets/onboarding-form.png)
+
+### 🧠 Policy Enforcement (UI logic in place)
+
+![Policy Flow](./assets/policy-enforcement.png)
+
+### 🗼 Tower Registry Overview
+
+![Tower Flow](./assets/tower-registry.png)
+
+### 📊 Dashboard
+
+![Dashboard](./assets/dashboard.png)
+
+> All screenshots are located in the `/assets/` folder.
+
+---
+
+---
+
+## 📦 Tech Stack
+
+- **React + Vite** (TypeScript)
+- **React Router DOM**
+- **Modular CSS (no Tailwind)**
+- **Accessible & Responsive Design**
+
+---
+
+## 🛠️ Run It Locally
+
+### 📥 Prerequisites
+
+- Node.js v18+
+- npm
+
+### 🚀 Steps
+
+```bash
+cd intelligent-network-access/telecom-ui
+npm install
+npm run dev
+
+App runs at: http://localhost:5173
 ```
