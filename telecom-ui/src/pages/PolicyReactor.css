@@ -1,0 +1,21 @@
+.policy-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.policy-form select {
+  padding: 8px;
+  margin-top: 4px;
+}
+
+.result-box {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f0f0f0;
+  font-size: 18px;
+  border-radius: 6px;
+  color: #333;
+  font-weight: 500;
+}
