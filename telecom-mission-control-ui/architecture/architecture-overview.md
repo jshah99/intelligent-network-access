@@ -61,3 +61,6 @@ This diagram presents the high-level architecture for the frontend system of the
 
 ![Policy Enforcement Flow](./data-flows/policy-reactor/policy-reactor.png)  
 📄 [Read More](./data-flows/policy-reactor/policy-reactor.md)
+
+![Tower Registory Service](./data-flows/tower-registory-service/tower-registory-service.png)  
+📄 [Read More](./data-flows/tower-registory-service/tower-registory-service.md)
