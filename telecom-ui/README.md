@@ -40,19 +40,19 @@ This repository covers **architecture design**, **UI development**, **data model
 
 ### 🎯 Device + User Onboarding
 
-![Onboarding Form](./assets/onboarding-form.png)
+![Onboarding Form](./src/assets/onboarding-form.png)
 
 ### 🧠 Policy Enforcement (UI logic in place)
 
-![Policy Flow](./assets/policy-enforcement.png)
+![Policy Flow](./src/assets/policy-enforcement.png)
 
 ### 🗼 Tower Registry Overview
 
-![Tower Flow](./assets/tower-registry.png)
+![Tower Flow](./src/assets/tower-registry.png)
 
 ### 📊 Dashboard
 
-![Dashboard](./assets/dashboard.png)
+![Dashboard](./src/assets/dashboard.png)
 
 > All screenshots are located in the `/assets/` folder.
 
