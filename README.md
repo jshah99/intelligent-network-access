@@ -15,7 +15,7 @@ Intelligent-Network-Access/
 │   │   ├── assets/              ← UI screenshots
 │   │   └── components/          ← components
         ├── App.tsx              ← Root level app file
-│   │   └── pages/               ← pages ( dahboard etc )
+│   │   └── pages/               ← pages ( dashboard etc )
 │   └── README.md                ← UI-specific setup & explanation
 │
 ├── telecom-architecture/        ← Architecture, diagrams, API contracts
