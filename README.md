@@ -50,7 +50,7 @@ A fully functional React prototype with:
 
 - Device + user onboarding form
 - Policy-aware upload simulation
-- Dashboard with real-time summaries
+- Dashboard with mock summaries
 - Form validation and component-level routing
 - Responsive layout using plain CSS
 - React Router v6 and context-based state
